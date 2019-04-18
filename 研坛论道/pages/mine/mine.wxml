@@ -1,0 +1,116 @@
+<!--pages/mine/mine.wxml-->
+
+
+
+<view class="touch" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" >
+<view class="content">
+  <view class="items">
+  <view wx:if="{{hidden > 0}}">
+    <view class="account bg" >
+      <view class="img">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" style="width:200rpx;height:200rpx;">
+        </image>
+      </view>
+      <view class="login">
+        {{userInfo.nickName}}
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+
+      <!-- 需要使用 button 来授权登录 -->
+      <button wx:if="{{canIUse}}" class="buttontype"   open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"><text>点击以登录</text></button>
+      <view wx:else>请升级微信版本</view>
+
+  </view>
+
+      <view class='line'></view>
+    <view class="nav">
+      
+        <view class="imgp"><image src="../../images/signature.png" style="width:50rpx;height:50rpx;"></image></view>
+        <view class="navinput"><input placeholder='点击添加个性签名' maxlength='15'></input></view>
+      
+    </view>
+
+    <view class="hr">
+    </view>
+
+    <view class="item" bindtap='jumpto_collect'>
+      <view class="imgp" bindtap='jumpto_collect'>
+        <image src="../../images/star.png" style="width:50rpx;height:50rpx;"></image>
+      </view>
+      <view class="name" bindtap='jumpto_collect'>(我)收藏(的论坛)</view>
+      <view class="detail" bindtap='jumpto_collect'>
+        <text>></text>
+      </view>
+    </view>
+
+    <view class="line"></view>
+    
+    <view class="item">
+      <view class="imgp">
+        <image src="../../images/care.png" style="width:50rpx;height:50rpx;"></image>
+      </view>
+      <view class="name">(我)关注(的用户)</view>
+      <view class="detail">
+        <text>></text>
+      </view>
+    </view>
+
+    <view class="line"></view>
+
+    <view class="item">
+      <view class="imgp">
+        <image src="../../images/recent.png" style="width:50rpx;height:50rpx;"></image>
+      </view>
+      <view class="name">(我)最近(的浏览)</view>
+      <view class="detail">
+        <text>></text>
+      </view>
+    </view>
+
+    <view class="hr">
+    </view>
+
+    <view class="item"  bindtap='jumpto_mypost'>
+      <view class="imgp"  bindtap='jumpto_mypost'>
+        <image src="../../images/draft.png" style="width:50rpx;height:50rpx;"></image>
+      </view>
+      <view class="name" bindtap='jumpto_mypost'>(我的)发帖</view>
+      <view class="detail" bindtap='jumpto_mypost'>
+        <text>></text>
+      </view>
+    </view>
+
+    <view class="hr">
+    </view>
+
+   <view class="item">
+      <view class="imgp">
+        <image src="../../images/invite.png" style="width:50rpx;height:50rpx;"></image>
+      </view>
+      <view class="name">邀请好友</view>
+      <button open-type="share" class="name123">123</button>
+      <view class="detail">
+        <text>></text>
+      </view>
+    </view>
+
+    <view class="hr">
+    </view>
+
+    <view class="item">
+      <view class="name">客服电话</view>
+      <view class="detail">
+        <text>(00000)</text>
+      </view>
+    </view>
+
+    <view class="line">
+    </view>
+
+    
+
+  </view>
+</view>
+</view>
